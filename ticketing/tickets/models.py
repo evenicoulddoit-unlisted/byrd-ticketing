@@ -10,8 +10,8 @@ class Ticket(models.Model):
     TYPE_FEATURE_REQUEST = 'f'
     TYPE_OTHER = 'o'
     TYPE_CHOICES = (
-        (TYPE_BUG_REPORT, 'Bug report'),
-        (TYPE_FEATURE_REQUEST, 'Feature request'),
+        (TYPE_BUG_REPORT, 'Bug Report'),
+        (TYPE_FEATURE_REQUEST, 'Feature Request'),
         (TYPE_OTHER, 'Other'),
     )
 
@@ -41,7 +41,9 @@ class Ticket(models.Model):
     type = models.CharField(max_length=1, choices=TYPE_CHOICES)
     urgency = models.IntegerField(choices=URGENCY_CHOICES)
     message = models.TextField()
-    status = models.CharField(max_length=1, choices=STATUS_CHOICES)
+    status = models.CharField(
+        max_length=1, choices=STATUS_CHOICES, default=STATUS_OPEN
+    )
 
 
 class TicketComment(models.Model):

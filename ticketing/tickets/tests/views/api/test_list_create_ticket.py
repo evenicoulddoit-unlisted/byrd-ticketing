@@ -87,7 +87,6 @@ class ListCreateTicketViewTests(APITestCase):
             message='Important message',
             type=tickets_models.Ticket.TYPE_BUG_REPORT,
             urgency=tickets_models.Ticket.URGENCY_HIGH,
-            status=tickets_models.Ticket.STATUS_OPEN
         )
 
         response = self.client.post(reverse(self.url), data)
@@ -95,6 +94,7 @@ class ListCreateTicketViewTests(APITestCase):
         self.assertEqual(1, tickets_models.Ticket.objects.count())
 
         ticket = tickets_models.Ticket.objects.get()
+        self.assertEqual(tickets_models.Ticket.STATUS_OPEN, ticket.status)
 
         for key, value in data.items():
             self.assertEqual(value, getattr(ticket, key))
