@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+python ticketing/manage.py migrate --noinput
