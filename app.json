@@ -26,6 +26,10 @@
       "description": "Use the production configuration",
       "value": "ticketing.settings.prod"
     },
+    "NPM_CONFIG_PRODUCTION": {
+      "description": "Turn off production node config to build dev dependencies",
+      "value": "false"
+    },
     "SECRET_KEY": {
       "description": "Assign a unique secret key",
       "generator": "secret"
