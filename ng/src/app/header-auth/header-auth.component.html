@@ -1,0 +1,14 @@
+<div *ngIf="user" [ngSwitch]="user.loggedIn" class="auth">
+  <div *ngSwitchCase="true">
+    <span class="auth__welcome">
+      Welcome {{ user.first_name }} {{ user.last_name }}
+    </span>
+    <a class="btn auth__action" (click)="logout()">
+      Logout
+    </a>
+  </div>
+  <a *ngSwitchCase="false" class="btn auth__action"
+     routerLink="/login">
+    Log In
+  </a>
+</div>

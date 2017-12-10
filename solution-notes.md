@@ -19,3 +19,6 @@
   * I turned off "output hashing" (hash of file appended to file) within
     Angular, as Django whitenoise will do this itself, and Django will still
     know how to find the hashed file
+* Ran out of time to write tests. Back-end tests at least cover most important
+  base - security
+* Ran out of time to handle errors more effectively

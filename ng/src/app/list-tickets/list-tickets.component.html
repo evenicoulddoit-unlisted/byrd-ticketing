@@ -1,0 +1,24 @@
+<section *ngIf="tickets" class="container">
+  <div class="tickets">
+    <h1 class="tickets__title">Tickets</h1>
+    <div class="tickets__list">
+      <div *ngFor="let ticket of tickets" class="ticket">
+        <div class="ticket__row">
+          <span class="ticket__subject">{{ ticket.subject }}</span>
+          <span class="ticket__tag ticket__urgency">
+            {{ ticket.urgencyLabel }} Urgency
+          </span>
+          <span class="ticket__tag ticket__type">{{ ticket.typeLabel }}</span>
+          <span class="ticket__tag ticket__status">{{ ticket.statusLabel }}</span>
+        </div>
+        <div class="ticket__row ticket__requester">
+          <span class="ticket__requester-name">{{ ticket.requester_name }}</span>
+          <span class="ticket__requester-email">{{ ticket.requester_email }}</span>
+        </div>
+        <div class="ticket__row">
+          <p class="ticket__message">{{ ticket.message }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,18 @@
+<form class="form" #form="ngForm" (submit)="login(form)">
+  <h1 class="form__title">Login</h1>
+  <div class="form-group">
+    <input class="form-input" placeholder="Email"
+           name="email" required [(ngModel)]="credentials.email">
+  </div>
+  <div class="form-group">
+    <input class="form-input" placeholder="Password"
+           name="password" type="password" required
+           [(ngModel)]="credentials.password">
+  </div>
+  <div class="form__actions">
+    <button class="btn btn--primary">Login</button>
+  </div>
+  <p *ngIf="errorMsg" class="alert alert--warning">
+    {{ errorMsg }}
+  </p>
+</form>

@@ -1,1 +1,190 @@
-/* You can add global styles to this file, and also import other style files */
+/**
+ * Global styles.
+ *
+ * Uses modern-vanilla CSS.
+ * No external libraries were used.
+ * Applied BEM methodology.
+ */
+:root {
+  /** colors **/
+  --color-teal: #65d6c3;
+  --color-red: #fd5c63;
+  --color-blue: #3578dc;
+
+  --color-brand-primary: var(--color-teal);
+  --color-brand-secondary: var(--color-red);
+  --color-warning: var(--color-red);
+  --color-light: #fafafa;
+  --color-dark: #444;
+
+  --color-background: rgba(101, 167, 214, 0.13);
+  --color-grey-lightest: #ddd;
+  --color-grey-light: #ccc;
+  --color-grey: #888;
+  --color-copy: var(--color-dark);
+
+  /** font definitions */
+  --font-size-base: 16px;
+  --font-family: "Helvetica Neue", Arial, sans-serif;
+
+  /** sizing **/
+  --header-height: 60px;
+  --main-margin-top: 70px;
+  --container-max-width: 900px;
+  --input-padding: 0.8rem 0.4rem;
+}
+
+@media (min-width: 480px) {
+  :root {
+    --main-margin-top: 100px;
+  }
+}
+
+@media (min-width: 720px) {
+  :root {
+    --main-margin-top: 160px;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-family);
+  background-color: var(--color-background);
+  color: var(--color-copy);
+}
+
+input,
+textarea {
+  padding: var(--input-padding);
+  border: 1px solid var(--color-grey-light);
+  font-family: var(--font-family);
+  font-size: 0.8rem;
+  color: var(--color-copy);
+}
+
+select {
+  padding: var(--input-padding);
+  border: 1px solid var(--color-grey-light);
+  font-size: 0.8rem;
+}
+
+option {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  margin: 0;
+  margin-top: var(--main-margin-top);
+}
+
+.container {
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  color: var(--color-copy);
+  background-color: var(--color-light);
+}
+
+.header__container {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__title {
+  margin: 0;
+  padding: 0;
+  text-transform: lowercase;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  color: var(--color-copy);
+}
+
+.btn {
+  display: inline-block;
+  padding: 1em 2em;
+  border: none;
+  border-radius: 4px;
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 1rem;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn--sm {
+  font-size: 0.7rem;
+  padding: 0.5rem 1rem;
+}
+
+.btn--info {
+  background-color: var(--color-grey-lightest);
+  color: var(--color-copy);
+}
+
+.btn--primary {
+  background-color: var(--color-blue);
+  color: var(--color-light);
+}
+
+.form-group .form-input {
+  display: block;
+  width: 100%;
+}
+
+.form-group + .form-group {
+  margin-top: 0.5rem;
+}
+
+.form {
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 2rem;
+  background-color: var(--color-light);
+  text-align: center;
+}
+
+.form__title {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.form__actions {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.alert {
+  margin: 1rem 0 0;
+  padding: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--color-light);
+}
+
+.alert--warning {
+  background-color: var(--color-warning);
+}
+
+.alert--success {
+  background-color: var(--color-brand-primary);
+}

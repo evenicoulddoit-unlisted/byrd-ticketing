@@ -1,0 +1,72 @@
+.tickets {
+  padding: 1rem 2rem;
+  background-color: var(--color-light);
+  color: var(--color-copy);
+}
+
+.tickets__title {
+  margin: 0 0 1.5rem;
+  padding: 0 0 1rem;
+  border-bottom: 2px solid var(--color-grey-lightest);
+}
+
+.ticket + .ticket {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-grey-lightest);
+}
+
+.ticket__row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.ticket__row + .ticket__row {
+  margin-top: 0.5rem;
+}
+
+.ticket__subject {
+  margin-right: 0.5rem;
+  margin-bottom: 0.5rem;
+  flex: 0 0 100%;
+  font-size: 1.2rem;
+}
+
+.ticket__tag {
+  margin-right: 0.5rem;
+  padding: 0.2rem 0.4rem;
+  border-radius: 20px;
+  color: var(--color-grey);
+  background-color: var(--color-grey-lightest);
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.ticket__requester {
+  font-size: 0.8rem;
+}
+
+.ticket__requester-name {
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+
+.ticket__message {
+  margin: 0;
+}
+
+/**
+ * A dash of mobile-friendlyness.
+ * Only display the tags alongside the subject on larger viewports.
+ */
+@media (min-width: 720px) {
+  .ticket-row {
+    flex-wrap: nowrap;
+  }
+
+  .ticket__subject {
+    margin-bottom: 0;
+    flex: 0 0 auto;
+  }
+}
