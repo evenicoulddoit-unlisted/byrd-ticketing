@@ -4,5 +4,8 @@
   "description": "",
   "main": "index.js",
   "author": "",
+  "scripts": {
+    "postinstall": "cd ng && npm install"
+  },
   "license": "ISC"
 }
